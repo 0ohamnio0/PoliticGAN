@@ -56,6 +56,7 @@ We used an average of the ratings as the representative score for each facial tr
 ## Data Split and set domain with facial impression ratings 
 
 **1. Set binary domain based on the survey result**
+
 e.g. trust 1 if image's trust score is larger than the average score across respondents. 
 
 | image label          | trust             |  binary           | 
