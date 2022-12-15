@@ -2,7 +2,7 @@
 
 ## Introduction
 
-I built a dataset of K-Politician with the raw posters of election campagin between 1960 and 2020, provided by Dowon Kim, [Center for Political Communication](http://cpc.snu.ac.kr/) for the study on the image of Politicians. We experimented on StyleGAN2-ADA, GANSpace, and StarGAN v2 models to inspect which neural network will be appropriate for finding facial properties that affect voters' political decision-making. Also, we find that there is lack of non-westernized facial dataset in piblic during data preparation, so this project might have significant help for who studies computer vision with multicultural values.
+**PoliticGAN** is a dataset of K-Politicians built with electoral posters from 1960 to 2020, provided by [Do Won Kim](https://github.com/DO-WON)([Center for Political Communication](http://cpc.snu.ac.kr/)). We experimented on StyleGAN2-ADA, GANSpace, and StarGAN v2 models to inspect which neural network will be appropriate for finding facial properties that affect voters' political decision-making. Also, we find that there is lack of non-westernized facial dataset in piblic during data preparation, so this project might have significant help for who studies computer vision with multicultural values.
 
 ## Data Preparation
 
