@@ -37,8 +37,8 @@ Considering the resolution and other quality traits of images, we restricted our
 |Candidate No. 1 and No. 2 for the Mayer at Local Elections in 2010, 2014 and 2018                                     | [1,048] |
 |Candidate No. 1 and No. 2 for the Member of National Assembly at Legislative Elections in 2012, 2016, and 2020        | [1,306] |
 
-**Run [autocrop](https://github.com/leblancfg/autocrop) and [backgroundremover](https://github.com/nadermx/backgroundremover) as well.**
-We also removed any colors, numbers, or text that could be used to infer the competence or partisanship of candidates.
+- Run [autocrop](https://github.com/leblancfg/autocrop) and [backgroundremover](https://github.com/nadermx/backgroundremover) as well.
+- We also manually removed any colors, numbers, or text that could be used to infer the competence or partisanship of candidates. 
 
 <img src="./img/mayer_male.PNG">
 
