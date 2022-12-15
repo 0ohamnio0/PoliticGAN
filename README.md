@@ -120,3 +120,23 @@ StarGAN v2 is a type of unsupervised learning – the model generates style doma
 
 <img src="./img/starganv2 (2).png">
 
+
+
+# Contributors
+<!-- readme: contributors -start -->
+<table>
+<tr>
+    <td align="center">
+        <a href="https://github.com/DO-WON">
+            <img src="https://avatars.githubusercontent.com/u/62243691?s=400&u=66042ee73b3b67fc6463b71ec89f8d55b0753e5c&v=4" width="100;" alt="DO-WON"/>
+            <br />
+            <sub><b>Do Won KIM</b></sub>
+        </a>
+    </td>
+    <td align="center">
+        <a href="https://github.com/0ohamnio0">
+            <img src="https://avatars.githubusercontent.com/u/67461531?v=4" width="100;" alt="0ohamnio0"/>
+            <br />
+            <sub><b>Haemin Song</b></sub>
+        </a>
+<!-- readme: contributors -end -->
