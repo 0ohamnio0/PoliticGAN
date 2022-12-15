@@ -107,7 +107,7 @@ Problem: Since collected scores of facial impressions are subjective evaluations
 ## StarGAN v2
 [[Original Code]](https://github.com/clovaai/stargan-v2)
 
-StarGAN v2 is a type of unsupervised learning – the model generates style domains from the dataset without any labels. However, our goal is to use collected facial ratings as labels and generate images that reflect these labels. This was the recurring problem that we faced for most of the image generation tasks we tried. We thus take a detour – we first make subsamples of 5,572 images (binary classification using the mean value as the threshold; e.g. class 1: dominant, class 2: lack dominant). Thus, each image now has binary parameters (dominant/competent/trustworthy/gender-typical or not). We then treat these classifications as domains, which will be used to generate domain-specific style codes.
+StarGAN v2 is a type of unsupervised learning – the model generates style domains from the dataset without any labels. However, our goal is to use collected facial ratings as labels and generate images that reflect these labels. This was the recurring problem that we faced for most of the image generation tasks we tried. We thus take a detour – we first make subsamples of 5,572 images (binary classification using the mean value as the threshold; e.g. class 1: dominant, class 2: not dominant). Thus, each image now has binary parameters (dominant/competent/trustworthy/gender-typical or not). We then treat these classifications as domains, which are used to generate domain-specific style codes.
 
 **Training from scratch: training on...(1) style code for each domain, (2) style transfer between domains**
 
