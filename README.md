@@ -7,35 +7,46 @@
 ## Data Preparation
 
 
-## pre-training용 데이터 전처리
+### Bulk Dataset for Pre-training
 
-gicho_1th_jpg to gicho_5th_jpg [45,850개]
+| image label        | [45,850] |
+| :------------------|------|
+|gicho_1st           | [??] |
+|gicho_2nd           | [??] |
+|gicho_3rd           | [??] |
+|gicho_4th           | [??] |
+|gicho_5th           | [??] |
 
-[autocrop](https://github.com/leblancfg/autocrop) 진행
+
+**1. Run [autocrop](https://github.com/leblancfg/autocrop) for Face Alignment and Crop to 256x256 Size**
 
 <img src="./img/bulk_w_bg.PNG">
 
-[backgroundremover](https://github.com/nadermx/backgroundremover) 진행
+**2. Run [backgroundremover](https://github.com/nadermx/backgroundremover) for Concealing Party-ego**
 
 <img src="./img/bulk.PNG">
 
 
-## 타겟 데이터 전처리
+### Target Dataset for Main Traning
 
-[총 5,530개]
 
-Candidate No. 1 and No. 2 for the Provincial Councilor at Provincial Election and Local Council Election between 2010 and 2021 [3,081]
+| image label                                                                                                                        | [5,530] |
+| :----------------------------------------------------------------------------------------------------------------------------------|---------|
+|Candidate No. 1 and No. 2 for the Provincial Councilor at Provincial Election and Local Council Election between 2010 and 2021      | [3,081] |
+|Candidate No. 1 and 2 for the mayer of cities and counties at Provincial Election and Local Council Election in 2010, 2014 and 2018 | [1,058] |
+|Candidate No. 1 and 2 for he National Assembly in 2012, 2016, and 2020                                                              | [1,391] |
 
-Candidate No. 1 and 2 for the mayer of cities and counties at Provincial Election and Local Council Election in 2010, 2014 and 2018 [1,058]
 
-Candidate No. 1 and 2 for he National Assembly in 2012, 2016, and 2020 [1,391]
+**Run [autocrop](https://github.com/leblancfg/autocrop) and [backgroundremover](https://github.com/nadermx/backgroundremover) as well**
 
 <img src="./img/mayer_male.PNG">
 
 
 
 
-## 설문조사 반영한 도메인 설정
+## Data Split and set domain with voters' impression data 
+
+**1. 설문조사 반영 도메인 설정**
 
 | image label          | trust             |  binary           | 
 | :------------------- | :----------------:| :----------------:|
@@ -44,7 +55,8 @@ Candidate No. 1 and 2 for he National Assembly in 2012, 2016, and 2020 [1,391]
 | img  3               | 63.74             | 1                 |
 | ...                  | ...               | ...               |
 
-총 8개의 도메인
+**2. 총 8개의 도메인으로 데이터 스플릿**
+
 |competence 0 | competence 1 | dominance 0 | dominance 1 | gendertyp 0 | gendertyp 1 | trust 0 | trust 1 |
 |:----------- |:-----------  |:----------- |:----------- |:----------- |:----------- |:--------|:--------|
 
@@ -52,15 +64,28 @@ Candidate No. 1 and 2 for he National Assembly in 2012, 2016, and 2020 [1,391]
 <img src="./img/competence_1.PNG">
 
 
+- **학습, 평가 및 검증을 위한 데이터 스플릿**
+
+| label | train | validation | test |
+|:----------- |:-----------  |:----------- |:----------- |
+|Ratio | 0.8 | 0.1 |0.1 |
+
 
 ## StyleGAN2-ADA
 [[Original Code]](https://github.com/NVlabs/stylegan2-ada-pytorch)
 
-<img src="./img/stylegan2-ada.png">
+**1k steps on a single RTX 3090 GPU with 45,850 images (bulk dataset)**
 
+### Generated Images *(Virtual Politicians!)*
+
+<img src="./img/stylegan2-ada.png">
 
 ## GANSpace
 [[Original Code]](https://github.com/harskish/ganspace)
+
+I went latent space exploration with the above pre-trained StyleGAN2-ADA.
+
+### IPA interpolation *(do not know which trait to another)*
 
 <img src="./img/ganspace (1).jpg">
 <img src="./img/ganspace (2).jpg">
@@ -69,7 +94,13 @@ Candidate No. 1 and 2 for he National Assembly in 2012, 2016, and 2020 [1,391]
 ## StarGAN v2
 [[Original Code]](https://github.com/clovaai/stargan-v2)
 
+Training from scratch: 나누어진 domain의 style code 학습 및 domain 간 style transfer 학습 진행
+
+**10k steps on a single RTX 3090 GPU with 5,530 images (target dataset)**
+
 <img src="./img/starganv2 (1).jpg">
+
+### interpolation *(competence 0 -> dominance 1)*
 
 <img src="./img/starganv2 (2).png">
 
