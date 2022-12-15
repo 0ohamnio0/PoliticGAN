@@ -15,11 +15,7 @@ All poster images were downloaded from the Korean National Election Commission h
 
 | image label        | [45,850] |
 | :------------------|------|
-|gicho_1st           | [??] |
-|gicho_2nd           | [??] |
-|gicho_3rd           | [??] |
-|gicho_4th           | [??] |
-|gicho_5th           | [??] |
+
 
 
 **1. Run [autocrop](https://github.com/leblancfg/autocrop) to align faces, crop, and standardize images to 256x256 size**
