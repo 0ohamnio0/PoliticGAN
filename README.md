@@ -111,7 +111,7 @@ StarGAN v2 is a type of unsupervised learning – the model generates style doma
 
 **Training from scratch: training on...(1) style code for each domain, (2) style transfer between domains**
 
-**10k steps on a single RTX 3090 GPU with 5,530 images (target dataset)**
+**10k steps on a single RTX 3090 GPU with 5,572 images (target dataset)**
 
 <img src="./img/starganv2 (1).jpg">
 
